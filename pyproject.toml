@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aerodeck-verify"
+version = "0.1.0"
+description = "Fail-closed verification gate for agent work: probe contract, second-key judge, advisory scanner"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Aerodeck" }]
+keywords = ["agents", "verification", "ci", "llm", "fail-closed"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.scripts]
+verify = "aerodeck_verify.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aerodeck-ai/verify"
+
+[tool.setuptools.packages.find]
+include = ["aerodeck_verify*"]
